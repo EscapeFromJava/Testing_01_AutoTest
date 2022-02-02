@@ -32,7 +32,7 @@ namespace AutoTest
             //FirstTest();
             //SecondTest();
             ThirdTest();
-            ThirdTestAlternative();
+            //ThirdTestAlternative();
             
             //Label resLab = _mainWindow.Get<Label>(SearchCriteria.ByAutomationId("158"));
 
@@ -72,15 +72,11 @@ namespace AutoTest
         private static void ThirdTest()
         {
             MenuBar menuBar = _mainWindow.Get<MenuBar>(SearchCriteria.ByAutomationId("MenuBar"));
-            Menu menu;
 
             string[] listCommands = { "Инженерный", "Программист", "Статистика", "Обычный" };
 
             foreach (var el in listCommands)
-            {
-                menu = menuBar.MenuItem("Вид", el);
-                menu.Click();
-            }
+                menuBar.MenuItem("Вид", el).Click();
         }
 
         private static void ThirdTestAlternative()
